@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+</head>
+<body>
+  <h1>
+    Hello, World!
+  </h1>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Baby</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  font-family: Georgia, serif;
+  color: white;
+
+  background:
+    radial-gradient(circle at 80% 45%, #ff4f9a35, transparent 25%),
+    radial-gradient(circle at 90% 80%, #a855f735, transparent 30%),
+    linear-gradient(135deg, #120014, #30052d, #100012);
+
+  padding: 25px 0;
+}
+
+/* =========================
+   HEARTS SA BACKGROUND
+   NASA RIGHT SIDE LANG
+========================= */
+
+.bg-heart {
+  position: fixed;
+  right: 5%;
+  z-index: 1;
+
+  color: #ff63aa;
+  font-size: 25px;
+
+  opacity: .7;
+
+  filter:
+    drop-shadow(0 0 8px #ff3d91)
+    drop-shadow(0 0 20px #ff3d91);
+
+  animation: floating 3s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+.h1 {
+  top: 10%;
+  right: 8%;
+}
+
+.h2 {
+  top: 22%;
+  right: 20%;
+  animation-delay: .5s;
+}
+
+.h3 {
+  top: 35%;
+  right: 7%;
+  animation-delay: 1s;
+}
+
+.h4 {
+  top: 48%;
+  right: 23%;
+  animation-delay: 1.5s;
+}
+
+.h5 {
+  top: 62%;
+  right: 8%;
+  animation-delay: 2s;
+}
+
+.h6 {
+  top: 76%;
+  right: 20%;
+  animation-delay: .7s;
+}
+
+.h7 {
+  top: 88%;
+  right: 7%;
+  animation-delay: 1.2s;
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0) scale(.8);
+    opacity: .4;
+  }
+
+  50% {
+    transform: translateY(-15px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+
+/* =========================
+   MAIN MESSAGE PANEL
+   NASA GILID LANG
+========================= */
+
+.card {
+  position: relative;
+  z-index: 5;
+
+  width: 72%;
+  max-width: 540px;
+
+  margin-left: 15px;
+  margin-right: auto;
+
+  background: rgba(25, 4, 28, .95);
+
+  border: 1px solid rgba(255, 120, 180, .4);
+
+  border-radius: 25px;
+
+  padding: 25px 20px;
+
+  box-shadow:
+    0 0 25px rgba(255, 50, 140, .25),
+    inset 0 0 25px rgba(255, 100, 180, .05);
+
+  backdrop-filter: blur(12px);
+
+  animation: appear 1s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+  width: 100%;
+
+  font-size: 16px;
+  line-height: 1.8;
+
+  color: #fff5fa;
+
+  white-space: pre-line;
+
+  text-align: left;
+}
+
+
+/* =========================
+   CLICK BUTTON
+========================= */
+
+button {
+  display: block;
+
+  margin: 25px auto 5px;
+
+  padding: 13px 25px;
+
+  border: none;
+  border-radius: 30px;
+
+  background:
+    linear-gradient(135deg, #ff4f98, #a855f7);
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 15px #ff4f9866,
+    0 0 30px #a855f744;
+
+  transition: .3s;
+}
+
+button:hover {
+  transform: scale(1.08);
+}
+
+button:active {
+  transform: scale(.92);
+}
+
+
+/* =========================
+   SECRET
+========================= */
+
+#secret {
+  display: none;
+
+  margin-top: 20px;
+  padding: 15px;
+
+  text-align: center;
+
+  border-radius: 18px;
+
+  background: rgba(255,255,255,.06);
+
+  border: 1px solid rgba(255,120,180,.25);
+
+  animation: reveal .6s ease;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: scale(.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* =========================
+   CLICK HEART EXPLOSION
+========================= */
+
+.click-heart {
+  position: fixed;
+
+  z-index: 100;
+
+  pointer-events: none;
+
+  color: #ff5da5;
+
+  filter:
+    drop-shadow(0 0 8px #ff2d85)
+    drop-shadow(0 0 18px #ff2d85);
+
+  animation: burst 1.6s ease-out forwards;
+}
+
+@keyframes burst {
+
+  0% {
+    opacity: 1;
+
+    transform:
+      translate(0,0)
+      scale(.2);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(var(--x), var(--y))
+      scale(1.2)
+      rotate(var(--r));
+  }
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 500px) {
+
+  .card {
+    width: 72%;
+
+    margin-left: 10px;
+
+    padding: 20px 15px;
+  }
+
+  .message {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .bg-heart {
+    font-size: 19px;
+  }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEARTS SA RIGHT SIDE
+========================= -->
+
+<div class="bg-heart h1">♥</div>
+<div class="bg-heart h2">♥</div>
+<div class="bg-heart h3">♥</div>
+<div class="bg-heart h4">♥</div>
+<div class="bg-heart h5">♥</div>
+<div class="bg-heart h6">♥</div>
+<div class="bg-heart h7">♥</div>
+
+
+<!-- =========================
+     MESSAGE PANEL
+========================= -->
+
+<div class="card">
+
+<div class="message">
+
+haii baby, alam kung pagod na pagod ka na. ramdam na ramdam kita baby, wag ikaw susuko ha? pahinga ka lang kung kailangan mo. hindi masamang mapagod, hindi masamang umiyak, hindi masamang huminto saglit. pahinga lang, walang sukuan okiee? after pahinga palag-palag na ulit:)) surrender and pray lang baby. ibigay mo kay lord lahat ng pagod mo, lahat ng worries mo. may araw din baby trust. magiging okay ang lahat. 
+malalagpasan mo yan baby. tapang tapang mo nga e bilib na bilib ako sayo kasi kahit na gaano ka kapagod tinutuloy mo pa din, andito ako palagi baby, kakampi mo ako sa lahat. sa good days at bad days, sa tahimik mong iyak, sa mga araw na parang wala kang gana andito ako. hindi ako aalis. hindi kita iiwan promise baby tiwala lang po. kung ano man nararamdaman mo ngayon baby, valid lahat yan. pray ka lang po ha, kausapin mo si Lord, kausapin mo ako. wag mo buhatin mag isa baby ha andito ako, hindi mo kailangan solohin mga yan baby mahal na mahal kita, sobra. 
+sorry baby kung ito lang kaya kong gawin hwehe, i hope kahit papaano gumaan pakiramdam mo, proud na proud ako sayo palagi baby, sobra sobra. 
+kahit gaano ka kapagod, kahit ang bigat na ng lahat, tinutuloy mo pa rin, idol talaga
+laban lang baby ha konti na lang yann may araw din na mag papahinga ka magdamag, andito ako palagi, always. and sana baby kahit gaano ka pa ka busy wag mo pababayaan sarili mo ha? mas mahalaga ka kesa sa lahat ng mga yann kaya always take care of yourself. kain ka sa tamang oras dun pa lang baby tuwang tuwa na ko e, kaya please baby alagaan mo sarili mo haa pag hindi, hindi talaga ako matutuwa nan ayoko pa naman nakikita kang pagod na pagod tapos pinipilit mo pa rin.magpahinga ka pag kailangan baby, wag moko alalahanin  na wala ka ng oras sakin ganon, okay na okay ako baby basta okay ka, dadamayan kita kung hindi. andito lang ako baby kahit na gaano ka ka busy mag-i-stay ako sayo, susuportahan kita, ipaparamdam ko sayo kung gaano kita ka mahal mahal. iloveyousomuch, mahal kita baby ko:))
+
+</div>
+
+
+<button onclick="showLove(event)">
+Click mo baby
+</button>
+
+
+<div id="secret">
+Basahin mo ulit kapag pagod ka na.
+</div>
+
+</div>
+
+
+<script>
+
+function showLove(event) {
+
+  document.getElementById("secret").style.display = "block";
+
+
+  /* =========================
+     100 HEARTS
+  ========================= */
+
+  for (let i = 0; i < 100; i++) {
+
+    const heart = document.createElement("div");
+
+    heart.className = "click-heart";
+
+    heart.innerHTML = "♥";
+
+    heart.style.left = event.clientX + "px";
+    heart.style.top = event.clientY + "px";
+
+
+    heart.style.setProperty(
+      "--x",
+      (Math.random() * 650 - 325) + "px"
+    );
+
+
+    heart.style.setProperty(
+      "--y",
+      (Math.random() * -650 - 40) + "px"
+    );
+
+
+    heart.style.setProperty(
+      "--r",
+      (Math.random() * 240 - 120) + "deg"
+    );
+
+
+    heart.style.fontSize =
+      (10 + Math.random() * 23) + "px";
+
+
+    heart.style.animationDuration =
+      (1 + Math.random() * .8) + "s";
+
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(() => {
+      heart.remove();
+    }, 1900);
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
